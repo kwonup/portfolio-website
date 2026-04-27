@@ -43,7 +43,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
                 {project.name} · {project.period}
               </p>
             </div>
-            <span className="w-fit rounded-md border border-primary/25 bg-primary/10 px-2.5 py-1 text-xs font-semibold text-primary">
+            <span className="w-fit rounded-md border border-border bg-secondary/60 px-2.5 py-1 text-xs font-semibold text-muted-foreground">
               {project.metric}
             </span>
           </div>
@@ -65,7 +65,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
           <ul className="mt-5 space-y-3">
             {project.highlights.map((highlight) => (
               <li key={highlight} className="flex gap-3 text-[0.9375rem] leading-7 text-muted-foreground">
-                <span className="mt-2 size-1.5 shrink-0 rounded-full bg-accent" />
+                <span className="mt-2 size-1.5 shrink-0 rounded-full bg-muted-foreground/70" />
                 <span>{highlight}</span>
               </li>
             ))}

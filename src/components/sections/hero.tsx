@@ -41,7 +41,7 @@ export function HeroSection() {
   return (
     <section id="hero" aria-label="소개" className="flex h-full flex-col">
       <motion.div initial={false} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.45 }}>
-        <p className="mb-4 inline-flex rounded-md border border-primary/25 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-primary">
+        <p className="mb-4 inline-flex rounded-md border border-border bg-secondary/50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-primary">
           Portfolio
         </p>
         <h1 className="max-w-[9ch] text-5xl font-bold tracking-normal text-foreground sm:text-6xl lg:text-7xl">
@@ -97,7 +97,7 @@ export function HeroSection() {
         })}
         <a
           href="#projects"
-          className="ml-0 inline-flex h-11 items-center gap-2 rounded-md border border-primary/30 bg-primary/10 px-4 text-sm font-semibold text-primary transition hover:bg-primary/15 sm:ml-2"
+          className="ml-0 inline-flex h-11 items-center gap-2 rounded-md border border-border bg-secondary/55 px-4 text-sm font-semibold text-foreground transition hover:border-primary/35 hover:text-primary sm:ml-2"
         >
           프로젝트 보기
           <ArrowUpRightIcon className="size-4" />
