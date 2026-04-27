@@ -9,7 +9,7 @@ type PortfolioShellProps = {
 
 export function PortfolioShell({ children }: PortfolioShellProps) {
   return (
-    <div className="relative mx-auto min-h-screen w-full max-w-[1760px] px-6 py-8 sm:px-10 lg:px-8 lg:py-0 2xl:px-4">
+    <div className="relative mx-auto min-h-screen w-full max-w-[1600px] px-6 py-8 sm:px-10 lg:px-[64px] lg:py-0 xl:px-[88px] 2xl:px-[112px]">
       <PointerGradient />
       <a
         href="#about"
