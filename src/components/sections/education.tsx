@@ -28,7 +28,7 @@ export function EducationSection() {
               </p>
             </CardHeader>
             <CardContent>
-              <Badge>{item.period}</Badge>
+              <PeriodBadge>{item.period}</PeriodBadge>
               <p className="mt-4 text-[0.9375rem] leading-7 text-muted-foreground">
                 {item.description}
               </p>
@@ -48,9 +48,7 @@ export function EducationSection() {
             <p className="mt-1 text-xs text-muted-foreground">
               {item.organization}
             </p>
-            <p className="mt-3 text-xs font-semibold text-primary">
-              {item.period}
-            </p>
+            <PeriodBadge className="mt-3">{item.period}</PeriodBadge>
             <p className="mt-3 text-[0.9375rem] leading-7 text-muted-foreground">
               {item.description}
             </p>
@@ -58,5 +56,19 @@ export function EducationSection() {
         ))}
       </div>
     </section>
+  );
+}
+
+function PeriodBadge({
+  children,
+  className,
+}: {
+  children: string;
+  className?: string;
+}) {
+  return (
+    <Badge className={className} variant="default">
+      {children}
+    </Badge>
   );
 }
