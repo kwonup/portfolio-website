@@ -48,7 +48,7 @@ export type Credential = {
 export const profile = {
   name: "권영우",
   englishName: "Youngwoo Kwon",
-  title: "Frontend Engineer · Data & AI",
+  title: "Software Engineer",
   email: "kkwon1122@gmail.com",
   location: "Seoul, Korea",
   nav: [
@@ -268,21 +268,21 @@ export const education: Credential[] = [
     organization: "소프트웨어융합대학 데이터사이언스학과 졸업",
     period: "2019.03 - 2025.02",
     description:
-      "데이터 기반 문제 정의와 소프트웨어 구현 역량을 함께 학습했습니다.",
+      "컴퓨터공학 기초지식 및 데이터 기반 문제 정의와 소프트웨어 구현 역량을 함께 학습했습니다.",
   },
   {
     title: "AX 자동화에서 LLM Agent까지 활용하는 AI 개발자 과정",
     organization: "청년취업사관학교 새싹(SeSAC) 영등포 8기",
     period: "2026.05 - 현재",
     description:
-      "데이터 분석, 머신러닝, LLM 활용과 AI Agent 구조를 학습하고 웹 서비스에 적용하고 있습니다.",
+      "데이터 분석, 머신러닝,딥러닝 LLM 활용과 AI Agent 구조를 학습하고 웹 서비스에 적용하고 있습니다.",
   },
   {
     title: "프론트엔드스쿨 플러스 3기",
     organization: "멋쟁이사자처럼",
     period: "2024.12 - 2025.03",
     description:
-      "2회의 팀 프로젝트를 수행했고 최종 프로젝트 최우수상을 수상했습니다.",
+      "프론트엔드 심화개념 학습 및 2회의 팀 프로젝트를 수행했고 최종 프로젝트 최우수상을 수상했습니다.",
   },
 ];
 
