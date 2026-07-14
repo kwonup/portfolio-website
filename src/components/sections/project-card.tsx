@@ -14,6 +14,9 @@ type ProjectCardProps = {
 };
 
 export function ProjectCard({ project, index }: ProjectCardProps) {
+  const isEf = project.title === "EF";
+  const displayTitle = isEf ? project.title : `${project.name} (${project.title})`;
+
   return (
     <motion.article
       initial={{ opacity: 0, y: 18 }}
@@ -28,24 +31,26 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
         target="_blank"
         rel="noreferrer"
         className="grid gap-5 focus-visible:outline-none md:grid-cols-[0.8fr_1.2fr]"
-        aria-label={`${project.title} GitHub 저장소 열기`}
+        aria-label={`${displayTitle} GitHub 저장소 열기`}
       >
         <ProjectVisual project={project} />
         <div className="min-w-0">
-          <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+          <div>
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">{project.role}</p>
               <h3 className="mt-2 flex items-center gap-2 text-xl font-semibold tracking-normal text-foreground">
-                {project.title}
+                {displayTitle}
                 <ArrowUpRightIcon className="size-4 shrink-0 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
               </h3>
               <p className="mt-1 text-sm text-muted-foreground">
-                {project.name} · {project.period}
+                {isEf ? `${project.name} · ${project.period}` : project.period}
+              </p>
+              <p className="mt-2 text-xs leading-5 text-muted-foreground/80">
+                <span className="font-semibold text-muted-foreground">팀원 구성</span>
+                {": "}
+                {project.team}
               </p>
             </div>
-            <span className="w-fit rounded-md border border-border bg-secondary/60 px-2.5 py-1 text-xs font-semibold text-muted-foreground">
-              {project.metric}
-            </span>
           </div>
 
           <p className="mt-5 text-[0.9375rem] leading-7 text-muted-foreground">{project.summary}</p>
@@ -83,6 +88,8 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
 }
 
 function ProjectVisual({ project }: { project: Project }) {
+  const isFitPt = project.title === "fit-pt";
+
   return (
     <div
       className={cn(
@@ -90,17 +97,21 @@ function ProjectVisual({ project }: { project: Project }) {
         project.imageAspect === "square" ? "aspect-square" : "aspect-[4/3]",
       )}
     >
-      <Image
-        src={project.imageSrc}
-        alt={project.imageAlt}
-        fill
-        unoptimized
-        sizes="(min-width: 768px) 32vw, 100vw"
-        className={cn(
-          "transition-transform duration-300 group-hover:scale-[1.02]",
-          project.imageFit === "contain" ? "object-contain p-3" : "object-cover object-top",
-        )}
-      />
+      <div className={cn("absolute overflow-hidden", isFitPt ? "inset-3 rounded-xl" : "inset-0")}>
+        <Image
+          src={project.imageSrc}
+          alt={project.imageAlt}
+          fill
+          unoptimized
+          sizes="(min-width: 768px) 32vw, 100vw"
+          className={cn(
+            "object-center transition-transform duration-300 group-hover:scale-[1.02]",
+            project.imageFit === "contain"
+              ? cn("object-contain", !isFitPt && "p-3")
+              : "object-cover",
+          )}
+        />
+      </div>
     </div>
   );
 }

@@ -1,4 +1,3 @@
-import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { experiences } from "@/data/profile";
 
@@ -13,7 +12,7 @@ export function ExperienceSection() {
       <SectionHeading
         id="experience"
         eyebrow="Experience"
-        title="실제 사용자가 있는 제품에서 일한 경험"
+        title="경력"
       />
       <div className="space-y-4">
         {experiences.map((experience) => (
@@ -49,11 +48,6 @@ export function ExperienceSection() {
                   </li>
                 ))}
               </ul>
-              <div className="mt-5 flex flex-wrap gap-2">
-                {experience.stack.map((item) => (
-                  <Badge key={item}>{item}</Badge>
-                ))}
-              </div>
             </CardContent>
           </Card>
         ))}

@@ -30,7 +30,7 @@
 ## Content Priorities
 
 - Projects 비중을 가장 높게 둔다
-- 대표 프로젝트는 Tokit, Must-Fin, EF 순으로 노출한다
+- 대표 프로젝트는 Tokit, fit-pt, Must-Fin, EF, Gym-Nect 순으로 노출한다
 - 신입 포트폴리오이므로 About보다 Projects와 Experience를 더 강하게 보여준다
 - 기술 나열보다 문제 해결과 역할 중심으로 쓴다
 

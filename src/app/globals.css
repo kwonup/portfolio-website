@@ -62,12 +62,6 @@ html {
   scroll-behavior: smooth;
 }
 
-@media (min-width: 1024px) {
-  html {
-    font-size: 80%;
-  }
-}
-
 body {
   min-height: 100vh;
   background: hsl(var(--background));

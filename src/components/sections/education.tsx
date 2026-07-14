@@ -15,7 +15,7 @@ export function EducationSection() {
         eyebrow="Education & Certifications"
         title="학습 이력"
       />
-      <div className="grid gap-4 sm:grid-cols-2">
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {education.map((item) => (
           <Card
             key={`${item.organization}-${item.title}`}
@@ -36,7 +36,7 @@ export function EducationSection() {
           </Card>
         ))}
       </div>
-      <div className="mt-5 grid gap-3 sm:grid-cols-3">
+      <div className="mt-5 max-w-md">
         {certifications.map((item) => (
           <div
             key={`${item.organization}-${item.title}`}

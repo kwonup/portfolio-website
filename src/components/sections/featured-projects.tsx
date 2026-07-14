@@ -11,10 +11,12 @@ export function FeaturedProjectsSection() {
     >
       <SectionHeading
         id="projects"
-        eyebrow="Featured Projects"
+        eyebrow="Projects"
         title="프로젝트"
       />
-      <p className="mb-8 max-w-3xl text-[1.0625rem] leading-8 text-muted-foreground"></p>
+      <p className="mb-8 max-w-3xl text-[1.0625rem] leading-8 text-muted-foreground">
+        지금까지 진행했던 프로젝트 들입니다.
+      </p>
       <div className="space-y-7">
         {projects.map((project, index) => (
           <ProjectCard key={project.title} project={project} index={index} />

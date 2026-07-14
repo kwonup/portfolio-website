@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
-import { ArrowUpRightIcon } from "@/components/ui/icons";
 import { profile } from "@/data/profile";
 import { cn } from "@/lib/utils";
 
@@ -41,14 +40,13 @@ export function HeroSection() {
   return (
     <section id="hero" aria-label="소개" className="flex h-full flex-col">
       <motion.div initial={false} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.45 }}>
-        <p className="mb-4 inline-flex rounded-md border border-border bg-secondary/50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-primary">
-          Portfolio
-        </p>
-        <h1 className="max-w-[9ch] text-5xl font-bold tracking-normal text-foreground sm:text-6xl lg:text-7xl">
+        <h1 className="text-5xl font-bold tracking-normal text-foreground sm:text-6xl lg:text-7xl">
           {profile.name}
         </h1>
-        <p className="mt-5 text-xl font-semibold text-foreground">{profile.title}</p>
-        <p className="mt-5 max-w-md text-base leading-8 text-muted-foreground">{profile.intro}</p>
+        <p className="mt-3 text-sm font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+          {profile.englishName}
+        </p>
+        <p className="mt-6 text-xl font-semibold text-foreground">{profile.title}</p>
       </motion.div>
 
       <div className="mt-10 lg:mt-16">
@@ -95,13 +93,6 @@ export function HeroSection() {
             </a>
           );
         })}
-        <a
-          href="#projects"
-          className="ml-0 inline-flex h-11 items-center gap-2 rounded-md border border-border bg-secondary/55 px-4 text-sm font-semibold text-foreground transition hover:border-primary/35 hover:text-primary sm:ml-2"
-        >
-          프로젝트 보기
-          <ArrowUpRightIcon className="size-4" />
-        </a>
       </div>
     </section>
   );
